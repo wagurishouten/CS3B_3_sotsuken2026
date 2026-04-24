@@ -9,7 +9,7 @@ AWS Amplifyを基盤とし、三井住友カードの明細メール等から自
 
 ### 🏁 フェーズ1：土台構築（環境構築 ＆ プロトタイプ）
 - [ ] **インフラ**: Amplifyプロジェクト初期化・GitHub連携
-- [ ] **インフラ**: Amazon DynamoDB 構築と接続設定共有
+- [ ] **インフラ**: Amazon RDS 構築と接続設定共有
 - [ ] **バックエンド**: データベース設計(models.py)と型定義(schemas.py)の共有
 - [ ] **フロント(Web)**: Reactプロジェクト初期化とTailwind CSS導入
 - [ ] **フロント(Mobile)**: Expoプロジェクト初期化とNativeWind導入
