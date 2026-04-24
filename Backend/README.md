@@ -8,12 +8,9 @@
 ```text
 backend/
 ├── app/
-│   ├── main.py          # アプリのエントリーポイント（FastAPIの初期化）
-│   ├── api/             # エンドポイント（Route）の定義
-│   ├── core/            # 設定情報（AWS設定、環境変数読み込み）
-│   ├── logic/           # メールの解析ロジック（parser.pyなど）
-│   ├── models/          # DynamoDBのデータ操作クラス（boto3等）
-│   └── schemas/         # Pydanticモデル（リクエスト・レスポンスの型）
-├── tests/               # 単体テスト用コード
-├── requirements.txt     # 必要なライブラリ一覧
-└── .env.example         # 環境変数のサンプル（本物は共有禁止）
+│   ├── main.py
+│   ├── api/             # エンドポイント定義
+│   ├── core/            # DB接続設定(database.py)
+│   ├── logic/           # 解析ロジック(parser.py)
+│   ├── models/          # SQLAlchemyのテーブル定義(models.py)
+│   └── schemas/         # Pydanticモデル(schemas.py)
