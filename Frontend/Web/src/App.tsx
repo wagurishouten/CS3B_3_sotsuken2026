@@ -1,26 +1,18 @@
+import { useState } from 'react';
 import { Layout } from './components/Layout.tsx';
-import { Button } from './components/Button.tsx';
-import { Input } from './components/Input.tsx';
-import { Card } from './components/Card.tsx';
 import { Dashboard } from './components/Dashboard.tsx';
-
+import { CalendarView } from './components/CalendarView.tsx';
+import { SubscriptionList } from './components/SubscriptionList.tsx';
 
 function App() {
+  const [view, setView] = useState<'home' | 'calendar' | 'list'>('home');
+
   return (
-    <Layout>
-      <div className="flex flex-col gap-6">
-        <div className="flex justify-between items-end">
-          <div>
-            <h2 className="text-2xl font-black text-orange-900">メインダッシュボード</h2>
-            <p className="text-orange-400 text-sm">現在の支出内訳</p>
-          </div>
-          <Button label="レポート出力" variant="sub" />
-        </div>
-
-        {/* 今回作ったダッシュボード */}
-        <Dashboard />
-
-      </div>
+    <Layout currentView={view} setView={setView}>
+      {/* 選択された view に応じて、その画面だけを表示する */}
+      {view === 'home' && <Dashboard />}
+      {view === 'calendar' && <CalendarView />}
+      {view === 'list' && <SubscriptionList />}
     </Layout>
   );
 }
